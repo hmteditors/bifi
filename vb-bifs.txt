@@ -208,7 +208,7 @@ urn:cite2:hmt:msB.v1:190v#urn:cite2:hmt:msB.v1:191r#urn:cite2:hmt:vbbifolio.v1:v
 urn:cite2:hmt:msB.v1:191v#urn:cite2:hmt:msB.v1:192r#urn:cite2:hmt:vbbifolio.v1:vb_191v_192r#
 urn:cite2:hmt:msB.v1:192v#urn:cite2:hmt:msB.v1:193r#urn:cite2:hmt:vbbifolio.v1:vb_192v_193r#
 
-// MISSSING
+// MISSING
 // 194v-230r
 
 urn:cite2:hmt:msB.v1:230v#urn:cite2:hmt:msB.v1:231r#urn:cite2:hmt:vbbifolio.v1:vb_230v_231r#
@@ -228,3 +228,7 @@ urn:cite2:hmt:msB.v1:243v#urn:cite2:hmt:msB.v1:244r#urn:cite2:hmt:vbbifolio.v1:v
 urn:cite2:hmt:msB.v1:244v#urn:cite2:hmt:msB.v1:245r#urn:cite2:hmt:vbbifolio.v1:vb_244v_245r#
 urn:cite2:hmt:msB.v1:245v#urn:cite2:hmt:msB.v1:246r#urn:cite2:hmt:vbbifolio.v1:vb_245v_246r#
 urn:cite2:hmt:msB.v1:246v#urn:cite2:hmt:msB.v1:247r#urn:cite2:hmt:vbbifolio.v1:vb_246v_247r#
+
+
+// MISSING
+// 247v-338v
