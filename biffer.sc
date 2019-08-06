@@ -58,7 +58,19 @@ def expandLines(raw: Vector[String], ms: String = "", processed: Vector[String] 
 
 def dataLine(text: String): String = {
   val data = text.split("#").toVector
-  if (data.size >= 3) {
+  if (data.size == 2) {
+    try {
+      val verso = Cite2Urn(data(0))
+      val recto = Cite2Urn(data(1))
+      s"Composite image not yet made for bifolio spread ${verso.objectComponent}-${recto.objectComponent}\n\n"
+    }  catch {
+      case t: Throwable => {
+        s"# Bad data\n\nUnable to format page for line ${data(0)}-${data(1)}\n"
+      }
+    }
+
+
+  } else if (data.size >= 3) {
     try {
       val verso = Cite2Urn(data(0))
       val recto = Cite2Urn(data(1))
@@ -68,7 +80,7 @@ def dataLine(text: String): String = {
       val imageService = imageServices(image.collection)
 
       "\n\n" + imageService.linkedMarkdownImage(image) + "\n\n"
-      //s"Yay.  Expand and format ${image}"
+
 
     } catch {
       case t: Throwable => {
@@ -83,7 +95,7 @@ def dataLine(text: String): String = {
 
 def bifolioRef(ln: String): (String, Boolean) = {
     val cols = ln.split("#").toVector
-    if (cols.size >= 3) {
+    if (cols.size >= 2) {
       try {
         val verso = Cite2Urn(cols(0))
         val recto = Cite2Urn(cols(1))
@@ -177,10 +189,10 @@ def printMS(formatted: Vector[(String,String,Boolean)], dir: File): Unit = {
 }
 
 def printVB = {
-  printMS(formatMS(msBData), vbDir)
+  printMS(formatMS(expandLines(msBData)), vbDir)
 }
 def printUpsilon = {
-  printMS(formatMS(oopsData), e3Dir)
+  printMS(formatMS(expandLines(oopsData)), e3Dir)
 }
 def printAll = {
   printVB
