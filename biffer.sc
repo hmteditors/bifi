@@ -1,3 +1,8 @@
+/*
+Ugly hack to write markdown pages for bifoio spreads as
+documented in delimited text files (in the "expanded" directory).
+*/
+
 import edu.holycross.shot.cite._
 import edu.holycross.shot.citebinaryimage._
 
@@ -16,7 +21,7 @@ val upsilonService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/e3
 
 val imageServices  : Map[String, IIIFApi] = Map(
   "vbbifolio" -> vbService,
-  "upsilonbifolio" -> upsilonService
+  "e3bifolio" -> upsilonService
 )
 
 val upsilonData = File("expanded/upsilon-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
@@ -94,7 +99,9 @@ def dataLine(text: String): String = {
 
     } catch {
       case t: Throwable => {
-        s"# Bad data\n\nUnable to format page for line ${data(0)}-${data(1)} with image reference ${data(2)}\n"
+        println(  s"\n\nBad data\n\nUnable to format page for line ${data(0)}-${data(1)} with image reference ${data(2)}")
+        println(t + "\n\n")
+        s"# Bad data\n\nUnable to format page for line ${data(0)}-${data(1)} with image reference ${data(2)}\n\n"
       }
     }
   } else {
