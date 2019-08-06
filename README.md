@@ -2,7 +2,13 @@
 
 Simple hack to make markdown pages for a browsable viewer of bifolio spreads for Venetus B and Upsilon 1.1 MSS.
 
+## TLDR
 
+
+To modify data and regenerate web pages:
+
+1. Edit tables in the `expanded` folder
+2. From an sbt console in this directory, `:load biffer.sc` and run `printAll`
 
 ## Data source
 
