@@ -56,11 +56,12 @@ urn:cite2:hmt:e3.v1:55v#urn:cite2:hmt:e3.v1:56r#urn:cite2:hmt:e3bifolio.v1:E3_55
 urn:cite2:hmt:e3.v1:56v#urn:cite2:hmt:e3.v1:57r#urn:cite2:hmt:e3bifolio.v1:E3_56v_57r#
 urn:cite2:hmt:e3.v1:57v#urn:cite2:hmt:e3.v1:58r#urn:cite2:hmt:e3bifolio.v1:E3_57v_58r#
 urn:cite2:hmt:e3.v1:58v#urn:cite2:hmt:e3.v1:59r#urn:cite2:hmt:e3bifolio.v1:E3_58v_59r#
-urn:cite2:hmt:e3.v1:59v#urn:cite2:hmt:e3.v1:60bisr#urn:cite2:hmt:e3bifolio.v1:E3_59v_60bisr# WRONG?
-urn:cite2:hmt:e3.v1:59v#urn:cite2:hmt:e3.v1:60r#urn:cite2:hmt:e3bifolio.v1:E3_59v_60r# WRONG?
-urn:cite2:hmt:e3.v1:60v#urn:cite2:hmt:e3.v1:60bisr#urn:cite2:hmt:e3bifolio.v1:E3_60v_60bisr# WRONG?
-urn:cite2:hmt:e3.v1:60v#urn:cite2:hmt:e3.v1:61bisr#urn:cite2:hmt:e3bifolio.v1:E3_60v_61bisr# WRONG?
-urn:cite2:hmt:e3.v1:60v#urn:cite2:hmt:e3.v1:61r#urn:cite2:hmt:e3bifolio.v1:E3_60v_61r#
+
+urn:cite2:hmt:e3.v1:59v#urn:cite2:hmt:e3.v1:60r#urn:cite2:hmt:e3bifolio.v1:E3_59v_60r#
+urn:cite2:hmt:e3.v1:60v#urn:cite2:hmt:e3.v1:60bisr#urn:cite2:hmt:e3bifolio.v1:E3_60v_60bisr#
+urn:cite2:hmt:e3.v1:60bisv#urn:cite2:hmt:e3.v1:61r##
+
+
 urn:cite2:hmt:e3.v1:61v#urn:cite2:hmt:e3.v1:62r#urn:cite2:hmt:e3bifolio.v1:E3_61v_62r#
 urn:cite2:hmt:e3.v1:62v#urn:cite2:hmt:e3.v1:63r#urn:cite2:hmt:e3bifolio.v1:E3_62v_63r#
 urn:cite2:hmt:e3.v1:63v#urn:cite2:hmt:e3.v1:64r#urn:cite2:hmt:e3bifolio.v1:E3_63v_64r#
@@ -82,7 +83,10 @@ urn:cite2:hmt:e3.v1:77v#urn:cite2:hmt:e3.v1:78r#urn:cite2:hmt:e3bifolio.v1:E3_77
 urn:cite2:hmt:e3.v1:78v#urn:cite2:hmt:e3.v1:79r#urn:cite2:hmt:e3bifolio.v1:E3_78v_79r#
 urn:cite2:hmt:e3.v1:79v#urn:cite2:hmt:e3.v1:80r#urn:cite2:hmt:e3bifolio.v1:E3_79v_80r#
 urn:cite2:hmt:e3.v1:80v#urn:cite2:hmt:e3.v1:81r#urn:cite2:hmt:e3bifolio.v1:E3_80v_81r#
-urn:cite2:hmt:e3.v1:81v#urn:cite2:hmt:e3.v1:81bisr#urn:cite2:hmt:e3bifolio.v1:E3_81v_81bisr# WRONG?
+urn:cite2:hmt:e3.v1:81v#urn:cite2:hmt:e3.v1:81bisr#urn:cite2:hmt:e3bifolio.v1:E3_81v_81bisr#
+
+urn:cite2:hmt:e3.v1:81bisv#urn:cite2:hmt:e3.v1:82r#
+
 urn:cite2:hmt:e3.v1:82v#urn:cite2:hmt:e3.v1:83r#urn:cite2:hmt:e3bifolio.v1:E3_82v_83r#
 urn:cite2:hmt:e3.v1:83v#urn:cite2:hmt:e3.v1:84r#urn:cite2:hmt:e3bifolio.v1:E3_83v_84r#
 urn:cite2:hmt:e3.v1:84v#urn:cite2:hmt:e3.v1:85r#urn:cite2:hmt:e3bifolio.v1:E3_84v_85r#
@@ -96,10 +100,14 @@ urn:cite2:hmt:e3.v1:92v#urn:cite2:hmt:e3.v1:93r#urn:cite2:hmt:e3bifolio.v1:E3_92
 urn:cite2:hmt:e3.v1:93v#urn:cite2:hmt:e3.v1:94r#urn:cite2:hmt:e3bifolio.v1:E3_93v_94r#
 urn:cite2:hmt:e3.v1:94v#urn:cite2:hmt:e3.v1:95r#urn:cite2:hmt:e3bifolio.v1:E3_94v_95r#
 urn:cite2:hmt:e3.v1:95v#urn:cite2:hmt:e3.v1:96r#urn:cite2:hmt:e3bifolio.v1:E3_95v_96r#
-urn:cite2:hmt:e3.v1:96bisv#urn:cite2:hmt:e3.v1:97r#urn:cite2:hmt:e3bifolio.v1:E3_96bisv_97r# WRONG?
-urn:cite2:hmt:e3.v1:96v#urn:cite2:hmt:e3.v1:96bisr#urn:cite2:hmt:e3bifolio.v1:E3_96v_96bisr# WRONG?
-urn:cite2:hmt:e3.v1:97bisv#urn:cite2:hmt:e3.v1:98r#urn:cite2:hmt:e3bifolio.v1:E3_97bisv_98r# WRONG?
-urn:cite2:hmt:e3.v1:97v#urn:cite2:hmt:e3.v1:97bisr#urn:cite2:hmt:e3bifolio.v1:E3_97v_97bisr# WRONG?
+
+
+urn:cite2:hmt:e3.v1:96v#urn:cite2:hmt:e3.v1:96bisr#
+urn:cite2:hmt:e3.v1:96bisv#urn:cite2:hmt:e3.v1:97r#
+
+
+urn:cite2:hmt:e3.v1:97v#urn:cite2:hmt:e3.v1:97bisr#urn:cite2:hmt:e3bifolio.v1:E3_97v_97bisr#
+urn:cite2:hmt:e3.v1:97bisv#urn:cite2:hmt:e3.v1:98r#urn:cite2:hmt:e3bifolio.v1:E3_97bisv_98r#
 urn:cite2:hmt:e3.v1:97v#urn:cite2:hmt:e3.v1:98r#urn:cite2:hmt:e3bifolio.v1:E3_97v_98r#
 urn:cite2:hmt:e3.v1:98v#urn:cite2:hmt:e3.v1:99r#urn:cite2:hmt:e3bifolio.v1:E3_98v_99r#
 urn:cite2:hmt:e3.v1:99v#urn:cite2:hmt:e3.v1:100r#urn:cite2:hmt:e3bifolio.v1:E3_99v_100r#

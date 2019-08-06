@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Manuscript e3, bifolio 96v-96bisr
+title: Bad data
 ---
 
-prev: [96bisv-97r](../96bisv-97r/) next: [97bisv-98r](../97bisv-98r/)
+Unable to format page for urn:cite2:hmt:e3.v1:96v#urn:cite2:hmt:e3.v1:96bisr#
 
+prev: [95v-96r](../95v-96r/) next: [96bisv-97r](../96bisv-97r/)
 
-
-[![Linked to zoomble image](http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/hmt/e3bifolio/v1/E3_96v_96bisr.tif/full/2000,/0/default.jpg)](http://www.homermultitext.org/ict2/?urn=urn:cite2:hmt:e3bifolio.v1:E3_96v_96bisr)
+Composite image not yet made for bifolio spread 96v-96bisr
 

@@ -3,7 +3,7 @@ layout: page
 title: Manuscript e3, bifolio 97bisv-98r
 ---
 
-prev: [96v-96bisr](../96v-96bisr/) next: [97v-97bisr](../97v-97bisr/)
+prev: [97v-97bisr](../97v-97bisr/) next: [97v-98r](../97v-98r/)
 
 
 

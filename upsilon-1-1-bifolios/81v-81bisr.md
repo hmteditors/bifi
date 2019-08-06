@@ -3,7 +3,7 @@ layout: page
 title: Manuscript e3, bifolio 81v-81bisr
 ---
 
-prev: [80v-81r](../80v-81r/) next: [82v-83r](../82v-83r/)
+prev: [80v-81r](../80v-81r/) next: [81bisv-82r](../81bisv-82r/)
 
 
 
