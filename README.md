@@ -3,6 +3,11 @@
 Simple hack to make markdown pages for a browsable viewer of bifolio spreads for Venetus B and Upsilon 1.1 MSS.
 
 
+
+## Data source
+
+The pages are built from simple tables associating a recto and verso page (identified by CITE2URN) with an image (also identified by a CITE2 URN) of their bifolio spread.  These files are in the `expanded` folder.
+
 ## Results
 
 The `venetus-b-bifolios` and `upsilon-1-1-bifolios` directories have markdown files with YAML headers for the Venetus  B and Upsilon 1.1 manuscripts respectively.  These files can be used with a CMS like jekyll to generate web pages, or can be used with any markdown viewer.
