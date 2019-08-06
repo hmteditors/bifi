@@ -12,19 +12,23 @@ val imageServiceUrlBase = "http://www.homermultitext.org/iipsrv?"
 val imageServicePathBase = "/project/homer/pyramidal/deepzoom/"
 
 val vbService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/vbbifolio/v1/")
-val oopsService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/e3bifolio/v1/")
+val upsilonService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/e3bifolio/v1/")
 
 val imageServices  : Map[String, IIIFApi] = Map(
   "vbbifolio" -> vbService,
-  "e3bifolio" -> oopsService
+  "upsilonbifolio" -> upsilonService
 )
 
-val oopsData = File("oops-bifs.txt").lines.toVector.tail.filter(_.nonEmpty)
-val msBData = File("vb-bifs.txt").lines.toVector.tail.filter(_.nonEmpty)
+val upsilonData = File("expanded/upsilon-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
+val vbData = File("expanded/vb-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
 
-val vbDir = File("msB")
-val e3Dir = File("e3")
+val vbDir = File("venetus-b-bifolios")
+val upsilonDir = File("upsilon-1-1-bifolios")
 
+
+/*
+Obsolete function used to convert intput in `raw` diretory
+to data in `expanded` directory.
 def expandLines(raw: Vector[String], ms: String = "", processed: Vector[String] = Vector.empty[String]): Vector[String] = {
   if (raw.isEmpty) {
     processed
@@ -55,7 +59,14 @@ def expandLines(raw: Vector[String], ms: String = "", processed: Vector[String] 
     }
   }
 }
+*/
 
+
+/** Format main page body with image for a single
+* line of data.
+*
+* @param text A single line of CEX data.
+*/
 def dataLine(text: String): String = {
   val data = text.split("#").toVector
   if (data.size == 2) {
@@ -68,7 +79,6 @@ def dataLine(text: String): String = {
         s"# Bad data\n\nUnable to format page for line ${data(0)}-${data(1)}\n"
       }
     }
-
 
   } else if (data.size >= 3) {
     try {
@@ -93,6 +103,14 @@ def dataLine(text: String): String = {
 }
 
 
+/** Extract bifolio reference from a single line of
+* CEX data.  Return a String with either the bifolio
+* refernce or an error message, accompanied by a Boolean
+* value indicating whether the bifolio referene was
+* corredtly made.
+*
+* @ln A single line of CEX data.
+*/
 def bifolioRef(ln: String): (String, Boolean) = {
     val cols = ln.split("#").toVector
     if (cols.size >= 2) {
@@ -112,6 +130,12 @@ def bifolioRef(ln: String): (String, Boolean) = {
     }
 }
 
+
+/** Compose header for jekyll web page for a single
+* line of data.
+*
+* @param text A single line of CEX data.
+*/
 def header(ln: String): String = {
   val data = ln.split("#").toVector
     if (data.size >= 3) {
@@ -130,6 +154,15 @@ def header(ln: String): String = {
     }
 }
 
+
+/** Compose a single markdown page. It uses a Vector of
+* strings because it formats the page using the first line,
+* but peeks ahead at the second line to see if there is a valid
+* value for "next" links.
+*
+* @param text A single line of CEX data.
+* @param prev Value for link to previous bifolio spread.
+*/
 def formatPage(data: Vector[String], prev: String = "")   :  (String, Boolean) = {
   val (currentBifolio, pgOk) = bifolioRef(data.head)
 
@@ -152,6 +185,17 @@ def formatPage(data: Vector[String], prev: String = "")   :  (String, Boolean) =
   }
 }
 
+
+/** Recursively format web pages for a manuscript.
+*
+* @param data  Vector of CEX data lines, one per page.
+* @param mdPages Accumlation of resulting web page info.
+* This triple consists of a String with the bifolio reference,
+* a String with the markdown to use as the page content,
+* and a Boolean indicating whether* the resulting page is
+* correctly formed or in error.
+* @param prev Bifolio reference for previous page.
+*/
 def formatMS(
   data: Vector[String],
   mdPages: Vector[(String, String, Boolean)] =  Vector.empty[(String, String, Boolean)],
@@ -174,26 +218,36 @@ def formatMS(
   }
 }
 
+/** Write markdown pages in a given directory.
+*
+* @param formatted Triplets describing a web page, as produced by
+* the `formatMS` function.
+* @param dir Directory where pages should be written.
+*/
 def printMS(formatted: Vector[(String,String,Boolean)], dir: File): Unit = {
   for ((pg,pgIndex) <- formatted.zipWithIndex) {
     val outFile = if (pg._3) {
       dir / s"${pg._1}.md"
-//
     } else {
       dir / s"bad-file-${pgIndex}.md"
-
     }
     val contents = pg._2
     outFile.overwrite(contents)
   }
 }
 
+/** Write markdown pages for Venetus B.*/
 def printVB = {
-  printMS(formatMS(expandLines(msBData)), vbDir)
+  printMS(formatMS(vbData), vbDir)
 }
+
+/** Write markdown pages for Upsilon 1.1.*/
 def printUpsilon = {
-  printMS(formatMS(expandLines(oopsData)), e3Dir)
+  printMS(formatMS(upsilonData), upsilonDir)
 }
+
+
+/** Write markdown pages for both MSS.*/
 def printAll = {
   printVB
   printUpsilon
