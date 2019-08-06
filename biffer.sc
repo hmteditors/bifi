@@ -24,12 +24,11 @@ val imageServices  : Map[String, IIIFApi] = Map(
   "e3bifolio" -> upsilonService
 )
 
-val upsilonData = File("expanded/upsilon-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
 val vbData = File("expanded/vb-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
-
 val vbDir = File("venetus-b-bifolios")
-val upsilonDir = File("upsilon-1-1-bifolios")
 
+val upsilonDir = File("upsilon-1-1-bifolios")
+val upsilonData = File("expanded/upsilon-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
 
 /*
 Obsolete function used to convert intput in `raw` diretory

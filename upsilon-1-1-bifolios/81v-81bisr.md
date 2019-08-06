@@ -7,5 +7,5 @@ prev: [80v-81r](../80v-81r/) next: [82v-83r](../82v-83r/)
 
 
 
-[![Linked to zoomble image](http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/hmt/e3bifolio/v1/vb_81v_81bisr.tif/full/2000,/0/default.jpg)](http://www.homermultitext.org/ict2/?urn=urn:cite2:hmt:e3bifolio.v1:vb_81v_81bisr)
+[![Linked to zoomble image](http://www.homermultitext.org/iipsrv?IIIF=/project/homer/pyramidal/deepzoom/hmt/e3bifolio/v1/E3_81v_81bisr.tif/full/2000,/0/default.jpg)](http://www.homermultitext.org/ict2/?urn=urn:cite2:hmt:e3bifolio.v1:E3_81v_81bisr)
 
