@@ -24,6 +24,12 @@ val imageServices  : Map[String, IIIFApi] = Map(
   "e3bifolio" -> upsilonService
 )
 
+val msLabels : Map[String,String] = Map(
+
+  "msB" -> "The Venetus B manuscript (Marciana 453 = 821)",
+  "e3" -> "Escorial Ω 1.12 (513 = Allen E4)"
+)
+
 val vbData = File("expanded/vb-bifs-expand.cex").lines.toVector.tail.filter(_.nonEmpty)
 val vbDir = File("venetus-b-bifolios")
 
@@ -147,7 +153,7 @@ def header(ln: String): String = {
     if (data.size >= 3) {
       try {
         val verso = Cite2Urn(data(0))
-        s"---\nlayout: page\ntitle: Manuscript ${verso.collection}, bifolio ${bifolioRef(ln)._1}\n---\n\n"
+        s"---\nlayout: page\ntitle:  ${msLabels(verso.collection)}, bifolio ${bifolioRef(ln)._1}\n---\n\n"
 
 
       } catch {
