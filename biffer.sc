@@ -14,6 +14,10 @@ val imageServicePathBase = "/project/homer/pyramidal/deepzoom/"
 val vbService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/vbbifolio/v1/")
 val oopsService = IIIFApi(imageServiceUrlBase, imageServicePathBase + "hmt/e3bifolio/v1/")
 
+val imageServices  : Map[String, IIIFApi] = Map(
+  "vbbifolio" -> vbService,
+  "e3bifolio" -> oopsService
+)
 
 val oopsData = File("oops-bifs.txt").lines.toVector.tail.filter(_.nonEmpty)
 val msBData = File("vb-bifs.txt").lines.toVector.tail.filter(_.nonEmpty)
@@ -43,8 +47,13 @@ def dataLine(text: String): String = {
       val verso = Cite2Urn(data(0))
       val recto = Cite2Urn(data(1))
       val image = Cite2Urn(data(2))
+
+
+      val imageService = imageServices(image.collection)
+
+      "\n\n" + imageService.linkedMarkdownImage(image) + "\n\n"
       //s"Yay.  Expand and format ${image}"
-      ""
+
     } catch {
       case t: Throwable => {
         s"# Bad data\n\nUnable to format page for line ${data(0)}-${data(1)} with image reference ${data(2)}\n"
@@ -80,7 +89,7 @@ def header(ln: String): String = {
     if (data.size >= 3) {
       try {
         val verso = Cite2Urn(data(0))
-        s"---\nlayout: page\ntitle: Manuscript ${verso.collection}, bifolio ${bifolioRef(ln)}\n---\n\n"
+        s"---\nlayout: page\ntitle: Manuscript ${verso.collection}, bifolio ${bifolioRef(ln)._1}\n---\n\n"
 
 
       } catch {
@@ -95,6 +104,7 @@ def header(ln: String): String = {
 
 def formatPage(data: Vector[String], prev: String = "")   :  (String, Boolean) = {
   val (currentBifolio, pgOk) = bifolioRef(data.head)
+
   val hdr = header(data.head)
   if (data.tail.isEmpty) {
     // last page, so empty "next"
@@ -106,7 +116,7 @@ def formatPage(data: Vector[String], prev: String = "")   :  (String, Boolean) =
     val (nxtRef, nextOk) = bifolioRef(data.tail.head)
 
     val nav = if (nextOk) {
-      s"prev: [${prev}](../${prev}/) next: [${nxtRef}](${nxtRef}/)\n\n"
+      s"prev: [${prev}](../${prev}/) next: [${nxtRef}](../${nxtRef}/)\n\n"
     } else {
       s"prev: [${prev}](../${prev}/) next: Invalid ref. to next pages\n\n"
     }
@@ -125,9 +135,14 @@ def formatMS(
 
   } else {
     val (currentBifolio, pgOk)  = bifolioRef(data.head)
+    val bifolioString = if(pgOk) {
+      currentBifolio
+    } else {
+      "(bad reference)"
+    }
     val (pg, ok) = formatPage(data, prev)
     val newPage = (currentBifolio, pg, ok)
-    formatMS(data.tail, mdPages :+ newPage, currentBifolio)
+    formatMS(data.tail, mdPages :+ newPage, bifolioString)
   }
 }
 
@@ -138,10 +153,10 @@ def printMS(formatted: Vector[(String,String,Boolean)], dir: File): Unit = {
 //
     } else {
       dir / s"bad-file-${pgIndex}.md"
-      println("BAD CONTENT: " + pg._2)
+
     }
     val contents = pg._2
-    println("WRITE FILE " + outFile)
+    outFile.overwrite(contents)
   }
 }
 
