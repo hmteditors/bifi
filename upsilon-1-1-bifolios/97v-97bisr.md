@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Manuscript e3, bifolio 97v-97bisr
+title:  Escorial Ω 1.12 (513 = Allen E4), bifolio 97v-97bisr
 ---
 
 prev: [96bisv-97r](../96bisv-97r/) next: [97bisv-98r](../97bisv-98r/)

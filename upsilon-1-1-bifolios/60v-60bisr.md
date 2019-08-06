@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Manuscript e3, bifolio 60v-60bisr
+title:  Escorial Ω 1.12 (513 = Allen E4), bifolio 60v-60bisr
 ---
 
 prev: [59v-60r](../59v-60r/) next: [60bisv-61r](../60bisv-61r/)
