@@ -25,17 +25,33 @@ val msBData = File("vb-bifs.txt").lines.toVector.tail.filter(_.nonEmpty)
 val vbDir = File("msB")
 val e3Dir = File("e3")
 
-def expandLines(raw: Vector[String], processed: Vector[String] = Vector.empty[String]): Vector[String] = {
+def expandLines(raw: Vector[String], ms: String = "", processed: Vector[String] = Vector.empty[String]): Vector[String] = {
   if (raw.isEmpty) {
     processed
+
   } else {
+
     val ln = raw.head
-    def cols = ln.split("#").toVector
-    if (cols.size < 3) {
-      println ("BAD DATA:  " + ln)
-      expandLines(raw.tail, processed)
+    if (ln.startsWith("// MISSING")) {
+      println("PROCESS " + ln)
+      val pair = ln.replaceFirst("// MISSING", "").replaceAll("v","").split("-").toVector.map(_.trim.toInt)
+      val subs = for (pg <- pair(0) to pair(1)) yield {
+        s"${ms}${pg}v#${ms}${pg+1}v#"
+      }
+
+      expandLines(raw.tail, ms, processed ++ subs.toVector)
     } else {
-      expandLines(raw.tail, processed :+ ln)
+
+      def cols = ln.split("#").toVector
+
+      if (cols.size < 3) {
+        println ("BAD DATA:  " + ln)
+        expandLines(raw.tail, ms, processed)
+      } else {
+        val recto = Cite2Urn(cols(0))
+        val siglum = recto.dropSelector.toString
+        expandLines(raw.tail, siglum, processed :+ ln)
+      }
     }
   }
 }

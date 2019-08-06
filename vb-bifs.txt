@@ -208,8 +208,7 @@ urn:cite2:hmt:msB.v1:190v#urn:cite2:hmt:msB.v1:191r#urn:cite2:hmt:vbbifolio.v1:v
 urn:cite2:hmt:msB.v1:191v#urn:cite2:hmt:msB.v1:192r#urn:cite2:hmt:vbbifolio.v1:vb_191v_192r#
 urn:cite2:hmt:msB.v1:192v#urn:cite2:hmt:msB.v1:193r#urn:cite2:hmt:vbbifolio.v1:vb_192v_193r#
 
-// MISSING
-// 194v-230r
+// MISSING 194v-229v
 
 urn:cite2:hmt:msB.v1:230v#urn:cite2:hmt:msB.v1:231r#urn:cite2:hmt:vbbifolio.v1:vb_230v_231r#
 urn:cite2:hmt:msB.v1:231v#urn:cite2:hmt:msB.v1:232r#urn:cite2:hmt:vbbifolio.v1:vb_231v_232r#
@@ -230,5 +229,4 @@ urn:cite2:hmt:msB.v1:245v#urn:cite2:hmt:msB.v1:246r#urn:cite2:hmt:vbbifolio.v1:v
 urn:cite2:hmt:msB.v1:246v#urn:cite2:hmt:msB.v1:247r#urn:cite2:hmt:vbbifolio.v1:vb_246v_247r#
 
 
-// MISSING
-// 247v-338v
+// MISSING 247v-338v
